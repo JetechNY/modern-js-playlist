@@ -35,7 +35,7 @@ The `index.js` file is now the 'entry point' into the rest of our application. S
 In order to `import` code, first we'll need to specify what variables we want to `export` from each of our utility script files:
 
 ```js
-// in ./utils/math.js
+// ./utils/math.js
 
 const add = (num1, num2) => num1 + num2
 
@@ -47,7 +47,7 @@ export { add, subtract }
 And in order to use these variables in another file, we'll need to `import` them using the exported variable names and the relative path to the other Javascript file:
 
 ```js
-// in ./utils/calculate.js
+// ./utils/calculate.js
 import { add, subtract } from './math.js'
 
 function calculate(num1, num2, operator) {
@@ -65,7 +65,7 @@ function calculate(num1, num2, operator) {
 In the example above, we're using *named exports* to specify what variables we're exporting. You can also specify a default export. For example:
 
 ```js
-// in ./utils/calculate.js
+// ./utils/calculate.js
 import { add, subtract } from './math.js'
 
 function evaluate(num1, num2, operator) {
@@ -85,11 +85,43 @@ export default evaluate
 To import a default export:
 
 ```js
-// in ./index.js
+// ./index.js
 import evaluate from './utils/calculate.js'
 
 console.log(evaluate(2, 2, "+"))
 ```
+
+Any variables that *aren't* exported are now not accessible from other files; they're basically private variables that can't be accessed from the outside. Let's see an example:
+
+```js
+// ./utils/calculate.js
+import { add, subtract } from './math.js'
+
+const cantSeeMe = "I'm only available in this file"
+
+function evaluate(num1, num2, operator) {
+  switch (operator) {
+    case "+":
+      return add(num1, num2) // using imported add fn
+    case "-":
+      return subtract(num1, num2) // using imported subtract fn
+    default:
+      return ""
+  }
+}
+
+export default evaluate
+```
+
+```js
+// ./index.js
+import evaluate from './utils/calculate.js'
+
+console.log(cantSeeMe) // Error
+
+console.log(evaluate(2, 2, "+"))
+```
+
 
 ## Resources
 

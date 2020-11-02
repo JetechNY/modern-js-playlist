@@ -9,13 +9,21 @@ All of this syntax is **very helpful** to know for React, so watch these videos 
 ## Scrimba Videos
 
 - [Arrow Function Syntax](https://scrimba.com/scrim/cDkBJpSk)
-- [Object Destructuring](https://scrimba.com/scrim/cEZGN6Ud)
-- [Array Destructuring](https://scrimba.com/scrim/cRJRrwAk)
+  - Useful for writing functions for callbacks (or writing functions in general)
 - [Object Shorthand](https://scrimba.com/scrim/cJgGbJAN)
+  - Useful for creating objects
 - [Object Computed Property](https://scrimba.com/scrim/cRJRpPfm)
+  - Useful for creating objects with dynamic keys
 - [Spread Operator](https://scrimba.com/scrim/cKgG92Ud)
+  - Useful for making copies of objects/arrays
+- [Object Destructuring](https://scrimba.com/scrim/cEZGN6Ud)
+  - Useful for breaking down complex objects
+- [Array Destructuring](https://scrimba.com/scrim/cRJRrwAk)
+  - Useful for getting data out of arrays
 - [async/await](https://scrimba.com/scrim/cdq7wqtr)
+  - Useful for writing asynchronous code more cleanly (working with Promises)
 - [ES Modules and import/export](https://scrimba.com/scrim/crq7vptM)
+  - Useful for organizing code across multiple files
 
 ## Lecture Notes
 
